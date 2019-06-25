@@ -1,0 +1,16 @@
+@media (min-width: $medium-screen-width) {
+  .site-header {
+    .navbar-left {
+      float: left;
+      width: 220px;
+    }
+  }
+
+  .compact-sidebar {
+    .site-header {
+      .navbar-left {
+        width: 70px;
+      }
+    }
+  }
+}

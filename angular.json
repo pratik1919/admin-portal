@@ -29,8 +29,13 @@
             ],
             "styles": [
               "src/styles.scss",
-              "./node_modules/bootstrap/dist/css/bootstrap.min.css"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/assets/styles/scss"
+              ]
+            },
             "scripts": []
           },
           "configurations": {
@@ -120,6 +125,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "oneconsole"
 }
