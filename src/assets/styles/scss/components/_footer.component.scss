@@ -1,0 +1,50 @@
+.fixed-footer {
+  .content-area {
+    margin-bottom: 3.5rem;
+  }
+
+  .footer {
+    position: fixed;
+    z-index: 100;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+  }
+}
+
+footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.125);
+  color: #777;
+  padding: 1rem 0;
+  .f-logo {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  .f-menu ul {
+    margin-bottom: 0;
+    li {
+      margin-bottom: 0.25rem;
+      a {
+        color: #777;
+        border-bottom: 1px solid transparent;
+        -webkit-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+        &:focus,
+        &:hover {
+          color: #333;
+          border-color: #333;
+        }
+      }
+      &.active a {
+        color: #333;
+        border-color: #333;
+      }
+    }
+  }
+  .f-title {
+    margin-bottom: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+}

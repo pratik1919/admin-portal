@@ -1,0 +1,217 @@
+@import "../base/variable";
+
+@media (min-width: 768px) {
+  .site-header .navbar-left {
+    float: left;
+    width: 220px;
+  }
+  .compact-sidebar .site-header .navbar-left {
+    width: 70px;
+  }
+}
+
+@media (min-width: 768px) {
+  .compact-sidebar .site-header .navbar-brand .logo {
+    width: 25px;
+    background: url(src/assets/img/logo-small.png) no-repeat;
+  }
+}
+
+@media (min-width: 768px) {
+  .site-header .navbar-right {
+    margin-left: 220px;
+    height: 60px !important;
+  }
+  .compact-sidebar .site-header .navbar-right {
+    margin-left: 70px;
+  }
+}
+
+@media (min-width: 768px) {
+  .site-header .navbar-nav > li > {
+    a,
+    span {
+      padding-top: 0;
+      padding-bottom: 0;
+      line-height: 60px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .site-header .navbar .navbar-toggleable-sm {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    padding: 1rem 2rem;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+  }
+}
+
+@media (max-width: 991px) {
+  .site-header .navbar {
+    margin-left: 0 !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .site-header .header-search {
+    padding: 0.75rem 0rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .site-header .header-search .form-control {
+    width: 180px;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    &:focus {
+      width: 300px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .navbar .navbar-toggleable-sm {
+    padding-top: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .navbar-nav .nav-item + .nav-item {
+    margin-left: 1.5rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .navbar ul > li > a .tag {
+    float: right;
+  }
+}
+
+@media (min-width: 768px) {
+  .navbar ul > li > a .tag {
+    top: -12px;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .navbar .navbar-toggleable-sm .form-inline .input-group {
+    .input-group-addon,
+    .input-group-btn {
+      width: 1%;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .navbar .dropdown-menu {
+    position: static;
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .navbar-dark .navbar-nav {
+    .nav-link {
+      color: rgba(0, 0, 0, 0.5);
+      &:focus,
+      &:hover {
+        color: rgba(0, 0, 0, 0.9);
+      }
+    }
+    .open > .nav-link {
+      color: rgba(0, 0, 0, 0.9);
+      &:focus,
+      &:hover {
+        color: rgba(0, 0, 0, 0.9);
+      }
+    }
+    .active > .nav-link {
+      color: rgba(0, 0, 0, 0.9);
+      &:focus,
+      &:hover {
+        color: rgba(0, 0, 0, 0.9);
+      }
+    }
+    .nav-link {
+      &.open {
+        color: rgba(0, 0, 0, 0.9);
+        &:focus,
+        &:hover {
+          color: rgba(0, 0, 0, 0.9);
+        }
+      }
+      &.active {
+        color: rgba(0, 0, 0, 0.9);
+        &:focus,
+        &:hover {
+          color: rgba(0, 0, 0, 0.9);
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .navbar-full-width {
+    padding-top: 0;
+    padding-bottom: 0;
+    .navbar-nav {
+      width: 100%;
+      > li {
+        display: table-cell;
+        float: none;
+        width: 1%;
+        text-align: center;
+        > a {
+          padding-top: 0.75rem;
+          padding-bottom: 0.75rem;
+          border-right: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        &:last-child > a {
+          border-right: none;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .navbar-bottom-line {
+    padding-top: 0;
+    padding-bottom: 0;
+    .navbar-brand {
+      padding-top: 0.65rem;
+    }
+    .navbar-nav {
+      .nav-item + .nav-item {
+        margin-left: 2rem;
+      }
+      > li > a {
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+        border-bottom: 2px solid transparent;
+      }
+      .active > .nav-link {
+        color: #3e70c9;
+        border-color: #3e70c9;
+        &:focus,
+        &:hover {
+          color: #3e70c9;
+          border-color: #3e70c9;
+        }
+      }
+      .nav-link {
+        &:focus,
+        &:hover {
+          border-color: rgba(0, 0, 0, 0.3);
+        }
+      }
+    }
+  }
+}

@@ -28,10 +28,26 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss",
-              "./node_modules/bootstrap/dist/css/bootstrap.min.css"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/@fortawesome/fontawesome-free/css/all.css",
+              "node_modules/animate.css/animate.min.css",
+              "node_modules/node-waves/dist/waves.min.css",
+              "src/styles.scss"
             ],
-            "scripts": []
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/assets/styles/scss"
+              ]
+            },
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "src/assets/script/jquery-fullscreen-plugin/jquery.fullscreen-min.js",
+              "src/assets/script/detectmobilebrowser/detectmobilebrowser.js",
+              "src/assets/script/jscrollpane/jquery.jscrollpane.min.js",
+              "node_modules/node-waves/dist/waves.min.js",
+              "src/script.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -120,6 +136,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "oneconsole"
 }
