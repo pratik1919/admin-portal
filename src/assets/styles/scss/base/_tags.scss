@@ -1,3 +1,7 @@
+/* =================================================================
+  Base
+================================================================= */
+
 * {
   outline: none !important;
 }
@@ -10,18 +14,24 @@ body {
 
 html {
   position: relative;
-  font-size: $base-font-size;
+  font-size: 12px;
 }
 
 body {
-  font-family: $base-font-family;
+  font-family: "Open Sans", sans-serif;
 }
 
-a,
-a:focus,
-a:hover,
-a:active {
+a {
   text-decoration: none;
+  &:focus,
+  &:hover,
+  &:active {
+    text-decoration: none;
+  }
+}
+
+.content-area {
+  padding: 1rem 0;
 }
 
 h1,
@@ -36,6 +46,6 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: $header-font-family;
+  font-family: "Montserrat", sans-serif;
   font-weight: 600;
 }

@@ -1,0 +1,100 @@
+/* =================================================================
+  Components
+================================================================= */
+
+/* Animate.css */
+@media (max-width: 767px) {
+  .animated {
+    /* CSS transitions */
+    -o-transition-property: none !important;
+    -moz-transition-property: none !important;
+    -ms-transition-property: none !important;
+    -webkit-transition-property: none !important;
+    transition-property: none !important;
+    /* CSS transforms */
+    -o-transform: none !important;
+    -moz-transform: none !important;
+    -ms-transform: none !important;
+    -webkit-transform: none !important;
+    transform: none !important;
+    /* CSS animations */
+    -webkit-animation: none !important;
+    -moz-animation: none !important;
+    -o-animation: none !important;
+    -ms-animation: none !important;
+    animation: none !important;
+  }
+}
+
+/* Jscrollpane */
+
+.jspPane {
+  width: 100% !important;
+}
+
+.jspVerticalBar {
+  right: 4px;
+  width: 4px;
+  height: 100%;
+  background: transparent;
+}
+
+.jspTrack {
+  background: transparent;
+  opacity: 0;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.jspContainer:hover .jspTrack {
+  opacity: 1;
+}
+
+.jspDrag {
+  border-radius: 0.25rem;
+}
+
+.custom-scroll-light .jspDrag {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.custom-scroll-dark .jspDrag {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/* Waves */
+
+.waves-effect {
+  &.waves-light .waves-ripple {
+    background: rgba(255, 255, 255, 0.1);
+    background: -webkit-radial-gradient(
+      rgba(255, 255, 255, 0.1) 0,
+      rgba(255, 255, 255, 0.2) 50%,
+      rgba(255, 255, 255, 0.1) 70%,
+      rgba(255, 255, 255, 0) 90%
+    );
+    background: -o-radial-gradient(
+      rgba(255, 255, 255, 0.1) 0,
+      rgba(255, 255, 255, 0.2) 50%,
+      rgba(255, 255, 255, 0.1) 70%,
+      rgba(255, 255, 255, 0) 90%
+    );
+    background: -moz-radial-gradient(
+      rgba(255, 255, 255, 0.1) 0,
+      rgba(255, 255, 255, 0.2) 50%,
+      rgba(255, 255, 255, 0.1) 70%,
+      rgba(255, 255, 255, 0) 90%
+    );
+    background: radial-gradient(
+      rgba(255, 255, 255, 0.1) 0,
+      rgba(255, 255, 255, 0.2) 50%,
+      rgba(255, 255, 255, 0.1) 70%,
+      rgba(255, 255, 255, 0) 90%
+    );
+  }
+  &.waves-classic.waves-light .waves-ripple {
+    background: rgba(255, 255, 255, 0.1);
+  }
+}

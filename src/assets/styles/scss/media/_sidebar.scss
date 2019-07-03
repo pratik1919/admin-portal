@@ -1,0 +1,116 @@
+@import "../base/variable";
+
+@media (max-width: 767px) {
+  .site-sidebar {
+    left: -220px;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+  }
+  .site-sidebar-opened .site-sidebar {
+    left: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .site-sidebar .sidebar-menu > li.active > a:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin-top: -6px;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 6px 6px 6px 0;
+    border-right-color: #e8ebf0;
+  }
+}
+
+@media (min-width: 768px) {
+  .compact-sidebar {
+    .site-sidebar {
+      width: 70px !important;
+      .custom-scroll,
+      .jspContainer {
+        overflow: visible !important;
+      }
+    }
+    .jspVerticalBar {
+      width: 0 !important;
+    }
+    .site-sidebar .sidebar-menu {
+      .menu-title {
+        display: none;
+      }
+      li {
+        &.compact-hide {
+          display: none;
+        }
+        > ul {
+          position: absolute;
+          top: 100%;
+          left: 70px;
+          width: 220px;
+          background: #fff;
+          border-left: none;
+        }
+        &:hover > {
+          a > .s-text {
+            display: block;
+          }
+          ul {
+            display: block !important;
+          }
+        }
+      }
+      > li {
+        &.active > a:after {
+          display: none;
+        }
+        > a {
+          padding: 1rem 0 1rem 1.875rem;
+          .s-icon {
+            margin-right: 2.85rem;
+            i {
+              top: 0;
+              font-size: 1.5rem;
+            }
+          }
+          > {
+            .tag {
+              position: absolute;
+              z-index: 10;
+              top: 5px;
+              left: 35px;
+            }
+            .s-text,
+            .s-caret {
+              display: none;
+            }
+          }
+        }
+        li > a > .s-caret {
+          color: #999;
+        }
+      }
+      > li:hover {
+        width: 290px;
+        background-color: #373944;
+      }
+      ul li {
+        > a {
+          padding: 0.5rem 1rem;
+          color: #777;
+          &:hover {
+            color: #333;
+          }
+        }
+        &.active > a {
+          color: #333;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}

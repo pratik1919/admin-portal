@@ -1,0 +1,16 @@
+@import "../base/variable";
+
+@media (min-width: 768px) {
+  .site-content {
+    margin-left: 220px;
+  }
+  .compact-sidebar .site-content {
+    margin-left: 70px;
+  }
+}
+
+@media (min-width: 768px) {
+  .fixed-footer .footer {
+    margin-left: 220px;
+  }
+}

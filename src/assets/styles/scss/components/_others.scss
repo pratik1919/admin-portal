@@ -1,0 +1,101 @@
+/* =================================================================
+  Other
+================================================================= */
+
+/* Row */
+
+.row-area {
+  padding-right: 15px;
+  padding-left: 15px;
+  .row {
+    margin-top: 1rem;
+    > [class^="col-"] {
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+      background-color: rgba(0, 0, 0, 0.05);
+      border: 1px solid rgba(0, 0, 0, 0.125);
+    }
+  }
+}
+
+/* Titles */
+
+.title-1 {
+  text-align: center;
+  span {
+    display: inline-block;
+    position: relative;
+    padding: 0 1rem;
+    &:before {
+      content: "";
+      position: absolute;
+      z-index: 9;
+      top: 15px;
+      left: -50px;
+      width: 50px;
+      border-width: 1px;
+      border-style: solid;
+      border-color: inherit;
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      z-index: 9;
+      top: 15px;
+      right: -50px;
+      width: 50px;
+      border-top-width: 2px;
+      border-top-style: solid;
+      border-top-color: inherit;
+    }
+  }
+}
+
+/* Other */
+
+.dropdown-static-opened {
+  display: block;
+  position: static;
+}
+
+.static-modal {
+  &.modal {
+    display: block;
+    position: relative;
+    z-index: 1;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+  }
+  .modal-dialog {
+    margin: 0;
+    width: auto;
+    max-width: none;
+  }
+}
+
+/* =================================================================
+  Extra
+================================================================= */
+
+/* Loading progress */
+
+#nprogress .spinner {
+  width: 140px;
+  right: auto;
+  left: 50%;
+  top: 20px;
+  margin-left: -73px;
+  padding: 8px 15px;
+  background: #fff;
+  color: #333;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  &:after {
+    content: "Loading...";
+    display: inline-block;
+    position: absolute;
+    top: 7px;
+    left: 48px;
+  }
+}
