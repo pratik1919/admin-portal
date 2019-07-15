@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  @Output() signOut = new EventEmitter();
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  signOutClicked() {
+    this.signOut.emit();
   }
 
 }

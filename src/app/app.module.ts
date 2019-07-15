@@ -7,6 +7,16 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ContentComponent } from './content/content.component';
+import { LoginComponent } from './login/login.component';
+import { OKTA_CONFIG, OktaAuthModule } from '@okta/okta-angular';
+
+import config from './okta.config';
+
+const oktaConfig = Object.assign({
+  onAuthRequired: ({oktaAuth, router}) => {
+    router.navigate(['/login']);
+  }
+}, config);
 
 @NgModule({
   declarations: [
@@ -14,13 +24,17 @@ import { ContentComponent } from './content/content.component';
     SidebarComponent,
     HeaderComponent,
     FooterComponent,
-    ContentComponent
+    ContentComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    OktaAuthModule
   ],
-  providers: [],
+  providers: [
+    {provide: OKTA_CONFIG, useValue: oktaConfig}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
