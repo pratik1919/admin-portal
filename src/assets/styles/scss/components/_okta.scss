@@ -1,0 +1,59 @@
+.login-wrapper {
+  &__form {
+    padding: 50px;
+    flex: 1;
+    color: $login-text-color;
+    font-weight: 100;
+
+    #okta-sign-in {
+      &.auth-container {
+        .okta-form-input-error {
+          padding-top: 5px;
+        }
+        h2.okta-form-title.o-form-head {
+          font-weight: 100;
+          margin-bottom: 30px;
+        }
+        &.main-container {
+          background-color: transparent;
+          border: none;
+          box-shadow: none;
+
+          .o-form-fieldset.o-form-label-top {
+            margin-bottom: 15px;
+          }
+
+          .okta-form-input-field {
+            padding: 8px 5px;
+            border: 1px solid $input-border-color;
+            background-color: $white;
+            input {
+              padding: 0;
+              width: 250px;
+              border: none;
+              outline: none;
+            }
+          }
+        }
+      }
+    }
+
+    .button {
+      &.button-primary {
+        padding: 8px 30px;
+        font-size: 12px;
+        background: $navbar-background-color;
+        color: $white;
+
+        &:hover {
+          background: darken($color: $navbar-background-color, $amount: 5);
+          cursor: pointer;
+        }
+      }
+    }
+
+    .auth-footer {
+      padding-top: 15px;
+    }
+  }
+}

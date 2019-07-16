@@ -1,7 +1,7 @@
 <app-header (signOut)="logout()" *ngIf="isAuthenticated"></app-header>
 <app-sidebar *ngIf="isAuthenticated"></app-sidebar>
-<!-- <router-outlet></router-outlet> -->
-<div class="site-content">
+<router-outlet *ngIf="!isAuthenticated"></router-outlet>
+<div class="site-content" *ngIf="isAuthenticated">
   <!-- Content -->
   <div class="content-area">
     <div class="container-fluid">

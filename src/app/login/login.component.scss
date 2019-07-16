@@ -1,0 +1,25 @@
+@import "../../assets/styles/scss/base/variable";
+
+.login-wrapper {
+  background: $login-background-color;
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  &__logo {
+    position: absolute;
+    left: 30px;
+    top: 30px;
+  }
+
+  &__banner {
+    padding: 50px;
+    flex: 2;
+    text-align: center;
+    img {
+      position: relative;
+      height: 70vh;
+    }
+  }
+}
