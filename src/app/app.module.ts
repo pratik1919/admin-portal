@@ -9,8 +9,12 @@ import { FooterComponent } from './footer/footer.component';
 import { ContentComponent } from './content/content.component';
 import { LoginComponent } from './login/login.component';
 import { OKTA_CONFIG, OktaAuthModule } from '@okta/okta-angular';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import config from './okta.config';
+import { ClientDrugComponent } from './client-drug/client-drug.component';
+import { ClientDrugService } from './client-drug/client-drug.service';
 
 const oktaConfig = Object.assign({
   onAuthRequired: ({oktaAuth, router}) => {
@@ -25,15 +29,19 @@ const oktaConfig = Object.assign({
     HeaderComponent,
     FooterComponent,
     ContentComponent,
-    LoginComponent
+    LoginComponent,
+    ClientDrugComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    OktaAuthModule
+    OktaAuthModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
-    {provide: OKTA_CONFIG, useValue: oktaConfig}
+    {provide: OKTA_CONFIG, useValue: oktaConfig},
+    ClientDrugService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,4 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-header',
@@ -8,6 +9,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 export class HeaderComponent implements OnInit {
 
   @Output() signOut = new EventEmitter();
+  test: FormGroup = new FormGroup({});
 
   constructor() { }
 
