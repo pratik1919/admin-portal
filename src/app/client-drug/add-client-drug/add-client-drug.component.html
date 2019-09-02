@@ -1,0 +1,49 @@
+<form class="needs-validation" [formGroup]="addClientDrugFormGroup" (ngSubmit)="onSubmit()">
+  <div class="form-row">
+    <div class="col-md-4 mb-3">
+      <label for="ndc">NDC</label>
+      <input type="text" class="form-control" id="ndc" formControlName="ndc" />
+      <p *ngIf="formSubmitted || ndc.invalid && !ndc.pristine">NDC is required</p>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="brandName">Brand Name</label>
+      <input type="text" class="form-control" id="brandName" formControlName="brandName" />
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="genericName">Generic Name</label>
+      <input type="text" class="form-control" id="genericName" formControlName="genericName" />
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="col-md-4 mb-3">
+      <label for="strength">Strength</label>
+      <input type="text" class="form-control" id="strength" formControlName="strength" />
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="strength">Strength Unit</label>
+      <input type="text" class="form-control" id="strengthUnit" formControlName="strengthUnit" />
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="otc">OTC</label>
+      <input type="text" class="form-control" id="otc" formControlName="otc" />
+      <p *ngIf="otc.invalid && !otc.pristine">OTC cannot be more that 1 characters long</p>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="col-md-4 mb-3">
+      <label for="supply">Supply</label>
+      <input type="text" class="form-control" id="supply" formControlName="supply" />
+      <p *ngIf="supply.invalid && !supply.pristine">Supply cannot be more that 1 characters long</p>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="generic">Generic</label>
+      <input type="text" class="form-control" id="generic" formControlName="generic" />
+      <p *ngIf="generic.invalid && !generic.pristine">Generic cannot be more that 1 characters long</p>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="drugDescription">Drug Description</label>
+      <textarea class="form-control" id="drugDescription" formControlName="drugDescription"></textarea>
+    </div>
+  </div>
+  <button class="btn btn-primary" type="submit">Submit form</button>
+</form>

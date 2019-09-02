@@ -15,6 +15,8 @@ import { HttpClientModule } from '@angular/common/http';
 import config from './okta.config';
 import { ClientDrugComponent } from './client-drug/client-drug.component';
 import { ClientDrugService } from './client-drug/client-drug.service';
+import { AddClientDrugComponent } from './client-drug/add-client-drug/add-client-drug.component';
+import { EditClientDrugComponent } from './client-drug/edit-client-drug/edit-client-drug.component';
 
 const oktaConfig = Object.assign({
   onAuthRequired: ({oktaAuth, router}) => {
@@ -30,7 +32,9 @@ const oktaConfig = Object.assign({
     FooterComponent,
     ContentComponent,
     LoginComponent,
-    ClientDrugComponent
+    ClientDrugComponent,
+    AddClientDrugComponent,
+    EditClientDrugComponent
   ],
   imports: [
     BrowserModule,

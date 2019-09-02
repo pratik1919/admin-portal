@@ -10,61 +10,19 @@ import { Router } from '@angular/router';
 })
 export class ClientDrugComponent implements OnInit {
 
-  formSubmitted: boolean = false;
-
-  // Form group
-  addClientDrugFormGroup: FormGroup;
-
-  // Form controls
-  ndc: FormControl;
-  brandName: FormControl;
-  genericName: FormControl;
-  strength: FormControl;
-  strengthUnit: FormControl;
-  otc: FormControl;
-  supply: FormControl;
-  generic: FormControl;
-  drugDescription: FormControl;
+  clientDrugs;
+  isLoadingData = true;
 
   constructor(private clientDrugService: ClientDrugService, private router: Router) {
   }
 
   ngOnInit() {
-    this.initializeForm();
+    this.fetchClientDrugs();
   }
 
-  private initializeForm() {
-    this.ndc = new FormControl('', [Validators.required]);
-    this.brandName = new FormControl('');
-    this.genericName = new FormControl('');
-    this.strength = new FormControl('');
-    this.strengthUnit = new FormControl('');
-    this.otc = new FormControl('', [Validators.maxLength(1)]);
-    this.supply = new FormControl('', [Validators.maxLength(1)]);
-    this.generic = new FormControl('', [Validators.maxLength(1)]);
-    this.drugDescription = new FormControl('');
-
-    this.addClientDrugFormGroup = new FormGroup({
-      ndc: this.ndc,
-      brandName: this.brandName,
-      genericName: this.genericName,
-      strength: this.strength,
-      strengthUnit: this.strengthUnit,
-      otc: this.otc,
-      supply: this.supply,
-      generic: this.generic,
-      drugDescription: this.drugDescription
-    });
+  fetchClientDrugs() {
+    this.isLoadingData = true;
+    this.clientDrugService.getClientDrugs()
+      .subscribe((data) => this.clientDrugs = data);
   }
-
-  onSubmit() {
-    this.formSubmitted = true;
-    if(!this.addClientDrugFormGroup.valid) {
-      return;
-    }
-
-    // API call to add client drug information
-    this.clientDrugService.addClientDrug(this.addClientDrugFormGroup.value).subscribe((v) => this.router.navigate(['']));
-  }
-
 }
