@@ -1,5 +1,10 @@
-<form class="needs-validation" [formGroup]="addClientDrugFormGroup" (ngSubmit)="onSubmit()">
-  <div class="form-row">
+<div class="section__header">
+  <h2 class="section__title">
+    Add Drug
+  </h2>
+</div>
+<form class="needs-validation add-drug-form" [formGroup]="addClientDrugFormGroup" (ngSubmit)="onSubmit()">
+  <div class="row">
     <div class="col-md-4 mb-3">
       <label for="ndc">NDC</label>
       <input type="text" class="form-control" id="ndc" formControlName="ndc" />
@@ -14,7 +19,7 @@
       <input type="text" class="form-control" id="genericName" formControlName="genericName" />
     </div>
   </div>
-  <div class="form-row">
+  <div class="row">
     <div class="col-md-4 mb-3">
       <label for="strength">Strength</label>
       <input type="text" class="form-control" id="strength" formControlName="strength" />
@@ -29,7 +34,7 @@
       <p *ngIf="otc.invalid && !otc.pristine">OTC cannot be more that 1 characters long</p>
     </div>
   </div>
-  <div class="form-row">
+  <div class="row">
     <div class="col-md-4 mb-3">
       <label for="supply">Supply</label>
       <input type="text" class="form-control" id="supply" formControlName="supply" />
@@ -45,5 +50,5 @@
       <textarea class="form-control" id="drugDescription" formControlName="drugDescription"></textarea>
     </div>
   </div>
-  <button class="btn btn-primary" type="submit">Submit form</button>
+  <button class="btn btn-primary" type="submit">Add Drug</button>
 </form>

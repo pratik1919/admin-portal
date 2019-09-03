@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges, ViewEncapsulation } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ClientDrugService } from '../client-drug.service';
 import { Router } from '@angular/router';
@@ -6,7 +6,8 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-add-client-drug',
   templateUrl: './add-client-drug.component.html',
-  styleUrls: ['./add-client-drug.component.scss']
+  styleUrls: ['./add-client-drug.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class AddClientDrugComponent implements OnInit, OnChanges {
 
@@ -64,7 +65,7 @@ export class AddClientDrugComponent implements OnInit, OnChanges {
   }
 
   private prePopData() {
-    if(!this.formInitialized) {
+    if (!this.formInitialized) {
       this.initializeForm();
     } else {
       this.ndc.setValue(this.prePopFormData.ndc);
@@ -81,11 +82,11 @@ export class AddClientDrugComponent implements OnInit, OnChanges {
 
   onSubmit() {
     this.formSubmitted = true;
-    if(!this.addClientDrugFormGroup.valid) {
+    if (!this.addClientDrugFormGroup.valid) {
       return;
     }
 
-    if(this.isUpdate) {
+    if (this.isUpdate) {
       this.clientDrugService.updateClientDrug(this.addClientDrugFormGroup.value, this.prePopFormData.clientDrugId)
         .subscribe((v) => this.router.navigate(['/client-drug']));
     } else {
@@ -96,7 +97,7 @@ export class AddClientDrugComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges) {
     // only run when property "prePopFormData" changed
-    if(changes.prePopFormData) {
+    if (changes.prePopFormData) {
       this.prePopData();
     }
   }

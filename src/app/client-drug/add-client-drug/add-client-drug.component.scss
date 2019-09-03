@@ -1,0 +1,17 @@
+.add-drug-form {
+  div[class*="col-"] {
+    margin-bottom: 15px !important;
+  }
+}
+
+.section {
+  &__header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  &__title {
+    margin-bottom: 0;
+    font-weight: 100;
+  }
+}
