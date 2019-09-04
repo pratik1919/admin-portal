@@ -1,0 +1,27 @@
+.section {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  &__title {
+    margin-bottom: 0;
+    font-weight: 100;
+  }
+  &__link {
+    padding: 8px 15px;
+    background: #23b2de;
+    transition: all 0.25s ease-in-out;
+    &:hover {
+      background: darken($color: #23b2de, $amount: 10);
+    }
+    &--add {
+      color: #fff;
+    }
+  }
+}
+
+.link-icon {
+  margin-right: 8px;
+}
