@@ -2,27 +2,27 @@
   <h2 class="section__title">Client Drug List</h2>
   <a class="section__link section__link--add" routerLink="add"><i class="fa fa-plus link-icon"></i> Add</a>
 </div>
-<table class="table">
+<table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table">
   <thead>
-    <tr>
-      <th>NDC</th>
-      <th>Brand Name</th>
-      <th>Generic Name</th>
-      <th>Strength</th>
-      <th>Strength Unit</th>
-      <th>Drug Description</th>
-      <th>Action</th>
-    </tr>
+  <tr>
+    <th>NDC</th>
+    <th>Brand Name</th>
+    <th>Generic Name</th>
+    <th>Strength</th>
+    <th>Strength Unit</th>
+    <th>Drug Description</th>
+    <th>Action</th>
+  </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let drug of clientDrugs">
-      <td>{{drug.ndc}}</td>
-      <td>{{drug.brandName}}</td>
-      <td>{{drug.genericName}}</td>
-      <td>{{drug.strength}}</td>
-      <td>{{drug.strengthUnit}}</td>
-      <td>{{drug.drugDescription}}</td>
-      <td><a [routerLink]="['edit', drug.clientDrugId]">Edit</a></td>
-    </tr>
+  <tr *ngFor="let drug of clientDrugs">
+    <td>{{drug.ndc}}</td>
+    <td>{{drug.brandName}}</td>
+    <td>{{drug.genericName}}</td>
+    <td>{{drug.strength}}</td>
+    <td>{{drug.strengthUnit}}</td>
+    <td>{{drug.drugDescription}}</td>
+    <td><a [routerLink]="['edit', drug.clientDrugId]">Edit</a></td>
+  </tr>
   </tbody>
 </table>

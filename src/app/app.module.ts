@@ -17,6 +17,7 @@ import { ClientDrugComponent } from './client-drug/client-drug.component';
 import { ClientDrugService } from './client-drug/client-drug.service';
 import { AddClientDrugComponent } from './client-drug/add-client-drug/add-client-drug.component';
 import { EditClientDrugComponent } from './client-drug/edit-client-drug/edit-client-drug.component';
+import { DataTablesModule } from 'angular-datatables';
 
 const oktaConfig = Object.assign({
   onAuthRequired: ({oktaAuth, router}) => {
@@ -41,7 +42,8 @@ const oktaConfig = Object.assign({
     AppRoutingModule,
     OktaAuthModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    DataTablesModule
   ],
   providers: [
     {provide: OKTA_CONFIG, useValue: oktaConfig},
@@ -49,4 +51,5 @@ const oktaConfig = Object.assign({
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

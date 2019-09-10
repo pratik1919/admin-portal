@@ -101,4 +101,8 @@ export class AddClientDrugComponent implements OnInit, OnChanges {
       this.prePopData();
     }
   }
+
+  getAddOrUpdateText() {
+    return this.isUpdate ? 'Update' : 'Add';
+  }
 }

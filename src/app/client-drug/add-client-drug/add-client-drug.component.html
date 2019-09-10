@@ -1,6 +1,6 @@
 <div class="section__header">
   <h2 class="section__title">
-    Add Drug
+    {{getAddOrUpdateText()}} Drug
   </h2>
 </div>
 <form class="needs-validation add-drug-form" [formGroup]="addClientDrugFormGroup" (ngSubmit)="onSubmit()">
@@ -50,5 +50,5 @@
       <textarea class="form-control" id="drugDescription" formControlName="drugDescription"></textarea>
     </div>
   </div>
-  <button class="btn btn-primary" type="submit">Add Drug</button>
+  <button class="btn btn-primary" type="submit">{{getAddOrUpdateText()}} Drug</button>
 </form>
