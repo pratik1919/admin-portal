@@ -30,7 +30,7 @@ export class ClientDrugComponent implements OnInit, AfterViewInit {
       pagingType: 'simple_numbers',
       pageLength: 2,
       info: false,
-      searching: false,
+      searching: true,
       lengthChange: false
     };
     this.fetchClientDrugs();
@@ -44,7 +44,7 @@ export class ClientDrugComponent implements OnInit, AfterViewInit {
 
   rerender(): void {
     this.datatableElement.dtInstance.then((dtInstance: DataTables.Api) => {
-      dtInstance.columns().every(function(colIndex) {
+      dtInstance.columns().every(function() {
         const column = this;
         if(column.header().innerHTML.toLowerCase() !== 'action') {
           const select = $('<select onclick="event.stopPropagation()" style="width: 100%"><option value=""></option></select><br/>')

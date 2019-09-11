@@ -32,6 +32,14 @@ export class AddClientDrugComponent implements OnInit, OnChanges {
 
   formInitialized = false;
 
+  // Tooltip info
+  tooltips = {
+    ndc: `A unique number and a universal product identifier for human drugs.`,
+    otc: 'Should be one character long.',
+    supply: 'Should be one character long.',
+    generic: 'Should be one character long.'
+  };
+
   constructor(private clientDrugService: ClientDrugService, private router: Router) {
   }
 
@@ -65,7 +73,7 @@ export class AddClientDrugComponent implements OnInit, OnChanges {
   }
 
   private prePopData() {
-    if (!this.formInitialized) {
+    if(!this.formInitialized) {
       this.initializeForm();
     } else {
       this.ndc.setValue(this.prePopFormData.ndc);
@@ -82,11 +90,11 @@ export class AddClientDrugComponent implements OnInit, OnChanges {
 
   onSubmit() {
     this.formSubmitted = true;
-    if (!this.addClientDrugFormGroup.valid) {
+    if(!this.addClientDrugFormGroup.valid) {
       return;
     }
 
-    if (this.isUpdate) {
+    if(this.isUpdate) {
       this.clientDrugService.updateClientDrug(this.addClientDrugFormGroup.value, this.prePopFormData.clientDrugId)
         .subscribe((v) => this.router.navigate(['/client-drug']));
     } else {
@@ -97,7 +105,7 @@ export class AddClientDrugComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges) {
     // only run when property "prePopFormData" changed
-    if (changes.prePopFormData) {
+    if(changes.prePopFormData) {
       this.prePopData();
     }
   }
