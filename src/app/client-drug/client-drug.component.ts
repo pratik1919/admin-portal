@@ -44,11 +44,11 @@ export class ClientDrugComponent implements OnInit, AfterViewInit {
 
   rerender(): void {
     this.datatableElement.dtInstance.then((dtInstance: DataTables.Api) => {
-      dtInstance.columns().every(function() {
+      dtInstance.columns().every(function(index) {
         const column = this;
         if(column.header().innerHTML.toLowerCase() !== 'action') {
-          const select = $('<select onclick="event.stopPropagation()" style="width: 100%"><option value=""></option></select><br/>')
-            .prependTo($(column.header()))
+          const select = $('<select onclick="event.stopPropagation()" style="width: 100%"><option value=""></option></select>')
+            .appendTo($('#search-filters td')[index])
             .on('change', function(e) {
               const val = $.fn.dataTable.util.escapeRegex(
                 $(this).val()

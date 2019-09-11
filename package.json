@@ -31,6 +31,7 @@
     "jquery": "^3.4.1",
     "jquery.fullscreen": "^0.6.0",
     "jscrollpane": "^2.2.1",
+    "ng2-tooltip-directive": "^2.1.9",
     "node-waves": "^0.7.6",
     "popper": "^1.0.1",
     "rxjs": "~6.5.2",

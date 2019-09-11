@@ -18,6 +18,7 @@ import { ClientDrugService } from './client-drug/client-drug.service';
 import { AddClientDrugComponent } from './client-drug/add-client-drug/add-client-drug.component';
 import { EditClientDrugComponent } from './client-drug/edit-client-drug/edit-client-drug.component';
 import { DataTablesModule } from 'angular-datatables';
+import { TooltipModule } from 'ng2-tooltip-directive';
 
 const oktaConfig = Object.assign({
   onAuthRequired: ({oktaAuth, router}) => {
@@ -43,7 +44,8 @@ const oktaConfig = Object.assign({
     OktaAuthModule,
     ReactiveFormsModule,
     HttpClientModule,
-    DataTablesModule
+    DataTablesModule,
+    TooltipModule
   ],
   providers: [
     {provide: OKTA_CONFIG, useValue: oktaConfig},

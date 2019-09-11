@@ -6,7 +6,7 @@
 <form class="needs-validation add-drug-form" [formGroup]="addClientDrugFormGroup" (ngSubmit)="onSubmit()">
   <div class="row">
     <div class="col-md-4 mb-3">
-      <label for="ndc">NDC <i class="fa fa-question-circle" data-toggle="tooltip" data-placement="right" title="{{tooltips.ndc}}"></i></label>
+      <label for="ndc">NDC <i class="fa fa-question-circle" tooltip="{{tooltips.ndc}}"></i></label>
       <input type="text" class="form-control" id="ndc" formControlName="ndc" />
       <p *ngIf="formSubmitted || ndc.invalid && !ndc.pristine">NDC is required</p>
     </div>
@@ -29,19 +29,19 @@
       <input type="text" class="form-control" id="strengthUnit" formControlName="strengthUnit" />
     </div>
     <div class="col-md-4 mb-3">
-      <label for="otc">OTC <i class="fa fa-question-circle" data-toggle="tooltip" data-placement="right" title="{{tooltips.otc}}"></i></label>
+      <label for="otc">OTC <i class="fa fa-question-circle" tooltip="{{tooltips.otc}}"></i></label>
       <input type="text" class="form-control" id="otc" formControlName="otc" />
       <p *ngIf="otc.invalid && !otc.pristine">OTC cannot be more that 1 characters long</p>
     </div>
   </div>
   <div class="row">
     <div class="col-md-4 mb-3">
-      <label for="supply">Supply <i class="fa fa-question-circle" data-toggle="tooltip" data-placement="right" title="{{tooltips.supply}}"></i></label>
+      <label for="supply">Supply <i class="fa fa-question-circle" tooltip="{{tooltips.supply}}"></i></label>
       <input type="text" class="form-control" id="supply" formControlName="supply" />
       <p *ngIf="supply.invalid && !supply.pristine">Supply cannot be more that 1 characters long</p>
     </div>
     <div class="col-md-4 mb-3">
-      <label for="generic">Generic <i class="fa fa-question-circle" data-toggle="tooltip" data-placement="right" title="{{tooltips.generic}}"></i></label>
+      <label for="generic">Generic <i class="fa fa-question-circle" tooltip="{{tooltips.generic}}"></i></label>
       <input type="text" class="form-control" id="generic" formControlName="generic" />
       <p *ngIf="generic.invalid && !generic.pristine">Generic cannot be more that 1 characters long</p>
     </div>
