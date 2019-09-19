@@ -50,5 +50,12 @@
       <textarea class="form-control" id="drugDescription" formControlName="drugDescription"></textarea>
     </div>
   </div>
-  <button class="btn btn-primary" type="submit">{{getAddOrUpdateText()}} Drug</button>
+  <div class="row">
+    <div class="col-md-2">
+      <button class="btn btn-primary" type="submit">{{getAddOrUpdateText()}} Drug</button>
+    </div>
+    <div class="col-md-2 offset-md-1">
+      <button class="btn btn-secondary" type="button" (click)="cancelBtnClicked()">Cancel</button>
+    </div>
+  </div>
 </form>

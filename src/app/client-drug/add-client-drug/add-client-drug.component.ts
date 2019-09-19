@@ -113,4 +113,8 @@ export class AddClientDrugComponent implements OnInit, OnChanges {
   getAddOrUpdateText() {
     return this.isUpdate ? 'Update' : 'Add';
   }
+
+  cancelBtnClicked() {
+    return this.router.navigate(['client-drug']);
+  }
 }
