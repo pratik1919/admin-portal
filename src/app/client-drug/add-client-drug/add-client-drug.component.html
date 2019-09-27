@@ -1,14 +1,14 @@
 <div class="section__header">
   <h2 class="section__title">
-    Add Drug
+    {{getAddOrUpdateText()}} Drug
   </h2>
 </div>
 <form class="needs-validation add-drug-form" [formGroup]="addClientDrugFormGroup" (ngSubmit)="onSubmit()">
   <div class="row">
     <div class="col-md-4 mb-3">
-      <label for="ndc">NDC</label>
-      <input type="text" class="form-control" id="ndc" formControlName="ndc" />
-      <p *ngIf="formSubmitted || ndc.invalid && !ndc.pristine">NDC is required</p>
+      <label for="ndc">NDC <i class="fa fa-question-circle" tooltip="{{tooltips.ndc}}"></i></label>
+      <input type="text" class="form-control" id="ndc" formControlName="ndc" required />
+      <p *ngIf="ndc.invalid && formSubmitted">NDC is required</p>
     </div>
     <div class="col-md-4 mb-3">
       <label for="brandName">Brand Name</label>
@@ -29,19 +29,19 @@
       <input type="text" class="form-control" id="strengthUnit" formControlName="strengthUnit" />
     </div>
     <div class="col-md-4 mb-3">
-      <label for="otc">OTC</label>
+      <label for="otc">OTC <i class="fa fa-question-circle" tooltip="{{tooltips.otc}}"></i></label>
       <input type="text" class="form-control" id="otc" formControlName="otc" />
       <p *ngIf="otc.invalid && !otc.pristine">OTC cannot be more that 1 characters long</p>
     </div>
   </div>
   <div class="row">
     <div class="col-md-4 mb-3">
-      <label for="supply">Supply</label>
+      <label for="supply">Supply <i class="fa fa-question-circle" tooltip="{{tooltips.supply}}"></i></label>
       <input type="text" class="form-control" id="supply" formControlName="supply" />
       <p *ngIf="supply.invalid && !supply.pristine">Supply cannot be more that 1 characters long</p>
     </div>
     <div class="col-md-4 mb-3">
-      <label for="generic">Generic</label>
+      <label for="generic">Generic <i class="fa fa-question-circle" tooltip="{{tooltips.generic}}"></i></label>
       <input type="text" class="form-control" id="generic" formControlName="generic" />
       <p *ngIf="generic.invalid && !generic.pristine">Generic cannot be more that 1 characters long</p>
     </div>
@@ -50,5 +50,10 @@
       <textarea class="form-control" id="drugDescription" formControlName="drugDescription"></textarea>
     </div>
   </div>
-  <button class="btn btn-primary" type="submit">Add Drug</button>
+  <div class="form__btn-wrapper">
+    <button class="btn btn-secondary" type="button" (click)="cancelBtnClicked()"><i
+        class="fas fa-times icon"></i>Cancel</button>
+    <button class="btn btn-primary" type="submit"><i class="fas fa-plus icon"></i>{{getAddOrUpdateText()}}
+      Drug</button>
+  </div>
 </form>
