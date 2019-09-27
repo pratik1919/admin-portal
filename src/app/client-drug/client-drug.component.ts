@@ -3,6 +3,7 @@ import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { DataTableDirective } from 'angular-datatables';
+import { OktaAuthService } from '@okta/okta-angular';
 
 declare var $;
 
@@ -13,7 +14,6 @@ declare var $;
   styleUrls: ['./client-drug.component.scss']
 })
 export class ClientDrugComponent implements OnInit, AfterViewInit {
-
   clientDrugs;
   isLoadingData;
 
@@ -22,7 +22,11 @@ export class ClientDrugComponent implements OnInit, AfterViewInit {
   dtOptions: DataTables.Settings = {};
   dtTrigger = new Subject();
 
-  constructor(private clientDrugService: ClientDrugService, private router: Router) {
+  constructor(
+    private clientDrugService: ClientDrugService,
+    private router: Router,
+    private oktaAuth: OktaAuthService
+  ) {
   }
 
   ngOnInit() {
@@ -39,7 +43,7 @@ export class ClientDrugComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
     setTimeout(() => {
       this.rerender();
-    }, 1000);
+    }, 2000);
   }
 
   rerender(): void {
@@ -47,21 +51,23 @@ export class ClientDrugComponent implements OnInit, AfterViewInit {
       dtInstance.columns().every(function(index) {
         const column = this;
         if(column.header().innerHTML.toLowerCase() !== 'action') {
-          const select = $('<select onclick="event.stopPropagation()" style="width: 100%"><option value=""></option></select>')
+          const select = $(
+            '<select onclick="event.stopPropagation()" style="width: 100%"><option value=""></option></select>'
+          )
             .appendTo($('#search-filters td')[index])
             .on('change', function(e) {
-              const val = $.fn.dataTable.util.escapeRegex(
-                $(this).val()
-              );
+              const val = $.fn.dataTable.util.escapeRegex($(this).val());
 
-              column
-                .search(val ? '^' + val + '$' : '', true, false)
-                .draw();
+              column.search(val ? '^' + val + '$' : '', true, false).draw();
             });
 
-          column.data().unique().sort().each((d, j) => {
-            select.append('<option value="' + d + '">' + d + '</option>');
-          });
+          column
+            .data()
+            .unique()
+            .sort()
+            .each((d, j) => {
+              select.append('<option value="' + d + '">' + d + '</option>');
+            });
         }
       });
     });
@@ -69,11 +75,10 @@ export class ClientDrugComponent implements OnInit, AfterViewInit {
 
   fetchClientDrugs() {
     this.isLoadingData = true;
-    this.clientDrugService.getClientDrugs()
-      .subscribe((data) => {
-        this.clientDrugs = data;
-        this.dtTrigger.next();
-        this.isLoadingData = false;
-      });
+    this.clientDrugService.getClientDrugs().subscribe(data => {
+      this.clientDrugs = data;
+      this.dtTrigger.next();
+      this.isLoadingData = false;
+    });
   }
 }
