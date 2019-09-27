@@ -50,12 +50,10 @@
       <textarea class="form-control" id="drugDescription" formControlName="drugDescription"></textarea>
     </div>
   </div>
-  <div class="row">
-    <div class="col-md-2">
-      <button class="btn btn-primary" type="submit">{{getAddOrUpdateText()}} Drug</button>
-    </div>
-    <div class="col-md-2 offset-md-1">
-      <button class="btn btn-secondary" type="button" (click)="cancelBtnClicked()">Cancel</button>
-    </div>
+  <div class="form__btn-wrapper">
+    <button class="btn btn-secondary" type="button" (click)="cancelBtnClicked()"><i
+        class="fas fa-times icon"></i>Cancel</button>
+    <button class="btn btn-primary" type="submit"><i class="fas fa-plus icon"></i>{{getAddOrUpdateText()}}
+      Drug</button>
   </div>
 </form>
