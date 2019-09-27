@@ -23,8 +23,8 @@ export class ClientDrugService {
   }
 
   updateClientDrug(clientDrug: ClientDrugModel, clientDrugId) {
-    const request = this.mapResponse(clientDrug);
-    return this.http.put(`${this.endpoint}/${clientDrugId}`, clientDrug);
+    const request = this.mapRequest(clientDrug);
+    return this.http.put(`${this.endpoint}/${clientDrugId}`, request);
   }
 
   getClientDrugById(clientDrugId) {
@@ -53,6 +53,7 @@ export class ClientDrugService {
 
   private mapRequest(data: ClientDrugModel) {
     return {
+      clientid: data.clientId,
       ndc: data.ndc,
       brandname: data.brandName,
       genericname: data.genericName,

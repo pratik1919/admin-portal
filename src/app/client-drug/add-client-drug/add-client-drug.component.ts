@@ -20,6 +20,7 @@ export class AddClientDrugComponent implements OnInit, OnChanges {
   addClientDrugFormGroup: FormGroup;
 
   // Form controls
+  clientId: FormControl;
   ndc: FormControl;
   brandName: FormControl;
   genericName: FormControl;
@@ -48,6 +49,7 @@ export class AddClientDrugComponent implements OnInit, OnChanges {
   }
 
   private initializeForm() {
+    this.clientId = new FormControl('', [Validators.required]);
     this.ndc = new FormControl('', [Validators.required]);
     this.brandName = new FormControl('');
     this.genericName = new FormControl('');
@@ -59,6 +61,7 @@ export class AddClientDrugComponent implements OnInit, OnChanges {
     this.drugDescription = new FormControl('');
 
     this.addClientDrugFormGroup = new FormGroup({
+      clientId: this.clientId,
       ndc: this.ndc,
       brandName: this.brandName,
       genericName: this.genericName,
@@ -76,6 +79,7 @@ export class AddClientDrugComponent implements OnInit, OnChanges {
     if(!this.formInitialized) {
       this.initializeForm();
     } else {
+      this.clientId.setValue(this.prePopFormData.clientId);
       this.ndc.setValue(this.prePopFormData.ndc);
       this.brandName.setValue(this.prePopFormData.brandName);
       this.genericName.setValue(this.prePopFormData.genericName);
