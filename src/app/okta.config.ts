@@ -5,5 +5,6 @@ export default {
   scope: 'openid profile email',
   testing: {
     disableHttpsCheck: false
-  }
+  },
+  pkce: true
 };

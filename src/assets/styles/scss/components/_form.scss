@@ -1,0 +1,31 @@
+label {
+  font-size: 12px;
+  font-weight: 300;
+}
+
+input {
+  &.form-control {
+    line-height: 40px;
+  }
+  &.ng-invalid {
+    //border: 1px solid #890000;
+    + p {
+      color: #890000;
+    }
+  }
+}
+
+.form {
+  &__btn-wrapper {
+    text-align: center;
+    .btn {
+      &:first-child {
+        margin-left: 0;
+      }
+      margin-left: 15px;
+    }
+    .icon {
+      margin-right: 8px;
+    }
+  }
+}
