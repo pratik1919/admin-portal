@@ -1,3 +1,5 @@
+@import "../base/variable";
+
 .fixed-footer {
   .content-area {
     margin-bottom: 3.5rem;
@@ -9,13 +11,13 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: #fff;
+    background-color: $footer-background-color;
   }
 }
 
 footer {
-  border-top: 1px solid rgba(0, 0, 0, 0.125);
-  color: #777;
+  border-top: 1px solid $footer-border-top;
+  color: $footer-text-color;
   padding: 1rem 0;
   .f-logo {
     font-size: 1.25rem;
@@ -26,19 +28,19 @@ footer {
     li {
       margin-bottom: 0.25rem;
       a {
-        color: #777;
+        color: $footer-text-color;
         border-bottom: 1px solid transparent;
         -webkit-transition: all 0.2s ease-in-out;
         transition: all 0.2s ease-in-out;
         &:focus,
         &:hover {
-          color: #333;
-          border-color: #333;
+          color: $active-link-color;
+          border-color: $active-link-color;
         }
       }
       &.active a {
-        color: #333;
-        border-color: #333;
+        color: $active-link-color;
+        border-color: $active-link-color;
       }
     }
   }
